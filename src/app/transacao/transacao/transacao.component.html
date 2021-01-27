@@ -1,0 +1,52 @@
+<section class="container mt-5">
+  <div>
+    <h1>Transações</h1>
+  </div>
+  <form (ngSubmit)="efetuarTransacao()">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Valor da Compra R$</span>
+        <span class="input-group-text">0,00</span>
+      </div>
+      <input type="number" class="form-control" [(ngModel)]="valorCompra" name="valorCompra">
+    </div>
+
+    <div class="input-group">
+      <input type="number" class="form-control" [(ngModel)]="valorPago" name="valorPago">
+      <div class="input-group-append">
+        <span class="input-group-text">Valor PAGO$</span>
+        <span class="input-group-text">0,00</span>
+      </div>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Pagar</button>
+    </div>
+  </form>
+</section>
+<section class="container mt-5">
+  <table class="table table-hover table-dark">
+    <thead>
+    <tr>
+      <th scope="col">Valor da Compra</th>
+      <th scope="col">Valor Pago</th>
+      <th scope="col">Troco</th>
+      <th scope="col">Tota de notas devolvidas</th>
+      <th scope="col">Notas de R$1,00</th>
+      <th scope="col">Notas de R$10,00</th>
+      <th scope="col">Notas de R$100,00</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>R${{valorCompra}}</th>
+      <td>R${{valorPago}}</td>
+      <td>R${{troco}}</td>
+      <td>{{totalNotas}} notas</td>
+      <td>{{notas1}} notas</td>
+      <td>{{notas10}} notas</td>
+      <td>{{notas100}} notas</td>
+    </tr>
+    </tbody>
+  </table>
+
+</section>

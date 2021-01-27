@@ -1,0 +1,88 @@
+<section class="container mt-5">
+  <h2>Cadastro Veículo</h2>
+  <form (ngSubmit)="cadastrar()">
+    <div class="form-check form-check-inline">
+      <input [(ngModel)]="tipo" class="form-check-input" type="radio" name="tipo" id="inlineRadio1" value="carro">
+      <label class="form-check-label" for="inlineRadio1">Carro</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input [(ngModel)]="tipo" class="form-check-input" type="radio" name="tipo" id="inlineRadio2" value="moto">
+      <label class="form-check-label" for="inlineRadio2">Moto</label>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Modelo</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="modelo" name="modelo" type="text" class="form-control" id="inputEmail3" placeholder="Modelo">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Marca</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="marca" name="marca" type="text" class="form-control" id="inputEmail3" placeholder="Marca">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Ano</label>
+      <div class="col-sm-10">
+        <input [(ngModel)]="ano" name="ano" type="text" class="form-control" id="inputEmail3" placeholder="Ano">
+      </div>
+    </div>
+    <fieldset *ngIf="tipo === 'carro'" class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Número de portas</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input [(ngModel)]="nPortas" class="form-check-input" type="radio" name="nPortas" id="gridRadios1" value="2" checked>
+            <label class="form-check-label" for="gridRadios1">
+              2 portas
+            </label>
+          </div>
+          <div class="form-check">
+            <input [(ngModel)]="nPortas" class="form-check-input" type="radio" name="nPortas" id="gridRadios2" value="3">
+            <label class="form-check-label" for="gridRadios2">
+              3 portas
+            </label>
+          </div>
+          <div class="form-check">
+            <input [(ngModel)]="nPortas" class="form-check-input" type="radio" name="nPortas" id="gridRadios3" value="4" >
+            <label class="form-check-label" for="gridRadios3">
+              4 portas
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset *ngIf="tipo === 'moto'" class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Número de passageiros</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input [(ngModel)]="passageiros" class="form-check-input" type="radio" name="passageiros" id="gridRadios1" value="1" checked>
+            <label class="form-check-label" for="gridRadios1">
+              1 Passageiros
+            </label>
+          </div>
+          <div class="form-check">
+            <input [(ngModel)]="passageiros" class="form-check-input" type="radio" name="passageiros" id="gridRadios2" value="3">
+            <label class="form-check-label" for="gridRadios2">
+              2 Passageiros
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Cadastrar veículo</button>
+      </div>
+    </div>
+  </form>
+  <div *ngIf="cadastro" class="alert alert-primary" role="alert">
+    Veículo cadastrado
+  </div>
+</section>
+
+
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServicePalindromos} from '../service-palindromos.service';
 
 @Component({
   selector: 'appk-palindromos',
