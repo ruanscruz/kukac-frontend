@@ -1,0 +1,31 @@
+<section class="container mt-5">
+  <div>
+    <h1>Palindromos</h1>
+  </div>
+  <form (ngSubmit)="capturandoIntervalo()">
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Numero Inicial</span>
+      </div>
+      <input type="number" class="form-control" [(ngModel)]="valorInicial" name="valorInicial">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Numero Final</span>
+      </div>
+      <input type="number" class="form-control" [(ngModel)]="valorFinal" name="valorFinal">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Gerar Palindromo</button>
+    </div>
+  </form>
+</section>
+
+<section *ngIf="!!palindromos">
+  <div *ngFor="let palindromo of palindromos">
+    <p>ValorInicial: {{palindromo}}</p>
+  </div>
+</section>
+
+
+
